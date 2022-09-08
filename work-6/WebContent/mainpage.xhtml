@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head></h:head> 
+<body> 
+
+	<h3>#{urunBean.init()}</h3>
+		
+<h1 align="center">HomeWork - 3</h1>
+
+<hr/>
+
+<p>http://localhost:8080/ErsunAnarHomeWork3/rest/WebService/getAllProducts</p>
+
+<hr/>
+
+<p>http://localhost:8080/ErsunAnarHomeWork3/rest/WebService/getAllCategories</p>
+
+<hr/>
+
+<p>http://localhost:8080/ErsunAnarHomeWork3/rest/WebService/getProductsByCategoryId/3</p>
+
+<hr/>
+
+<p>http://localhost:8080/ErsunAnarHomeWork3/rest/WebService/addProduct</p>
+
+<pre>
+{
+    "urunAdi": "kazak",
+    "fiyat": 230,
+    "kategori": {
+     "id": 2,
+     "kategori": "Giyim"
+    }
+   
+}
+*kategori id'si üzerinden kategoriyi arıyor varsa ürünü ekliyor. burada kategori adı için girilen değerin önemi olmuyor.
+eğer kategori id değeri üzerinden bir sonuç dönmezse önce girilen kategori adi ile yeni kategori ekliyor sonra eklenen kategor eklenmek istenen ürüne set edilip ürün öyle ekleniyor.
+burada ise girilen kategori id değerinin önemi olmuyor çünkü ürün eklendiğinde id değeri otomatik artarak gittiği için sıraki değer id değeri olarak belirleniyor.
+</pre>
+
+
+</body> 
+</html>
