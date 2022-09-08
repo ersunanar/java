@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+	
+
+<body>
+
+
+<h:form>
+
+
+
+<h1 align="center">
+	<h:selectOneMenu align="center" value="#{urunBean.selectedlocId}">
+		
+		<f:selectItem itemLabel="Kategori Seçiniz"  itemValue = "#{null}" noSelectionOption="true"/>
+		<f:selectItems value="#{urunBean.kategoriList}" var="kategori"
+			itemLabel="#{kategori.kategori}" itemValue="#{kategori.id}" />
+	</h:selectOneMenu>
+	<h:outputText value="&#160;" />
+	<h:outputText value="&#160;" />
+	<h:commandButton action="#{urunBean.FilterUrunlerByKategoriId()}" value="Ürünleri Listele" />
+
+	</h1>
+	
+<h1 align="center">Ürün Listesi</h1>
+
+
+<table cellpadding="10" cellspacing="2" border="2" align="center">
+<tr>
+<th>Ad</th>
+<th>Fiyat</th>
+<th>Kategori</th>
+</tr>
+
+	<ui:repeat var="urun" value="#{urunBean.urunler}">
+		<tr>
+		<td>#{urun.urunAdi}</td>
+		<td>#{urun.fiyat}</td>
+		<td>#{urun.kategori.kategori}</td>
+				
+		</tr>
+	</ui:repeat>
+
+</table>
+
+</h:form>
+</body>
+
+
+
+
+
+</html>
